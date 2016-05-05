@@ -1,23 +1,59 @@
-<div class="jumbotron">
-  <h1>'Allo, 'Allo!</h1>
-  <p class="lead">
-    <img src="images/yeoman.png" alt="I'm Yeoman"><br>
-    Always a pleasure scaffolding your apps.
-  </p>
-  <p><a class="btn btn-lg btn-success" ng-href="#/">Splendid!<span class="glyphicon glyphicon-ok"></span></a></p>
-</div>
+<md-content class="bg-img" flex>
+  <!-- <md-content  layout="column" > -->
+    <md-content  layout="row" layout-align="center center" class="transparent">
+      <!-- <md-content flex="33"> -->
 
-<div class="row marketing">
-  <h4>HTML5 Boilerplate</h4>
-  <p>
-    HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.
-  </p>
+        <!-- <md-content layout="column" layout-align="center center" flex="100" flex-gt-sm="50" class="own-jumbotron">
+          <h1 class="md-display-2">What I'm forgetting to do?</h1>
+          <i class="fa fa-question fa-5x spin "></i>
+          <p class="lead">
+            ¡Never more forget!
+          </p>
+          <span class="md-caption"><strong>Create a públic todo list and share the link</strong></span>
 
-  <h4>Angular</h4>
-  <p>
-    AngularJS is a toolset for building the framework most suited to your application development.
-  </p>
+          <div  layout='row'>
+            <div>
+                <md-input-container class="md-icon-float md-block" flex-gt-sm>
+                  <label>List name</label>
+                  <md-icon md-font-icon="fa-list" class="fa fa-lg"></md-icon>
+                  <form ng-submit="" >
+                    <input ng-model="todo">
+                  </form>
+                </md-input-container>
 
-  <h4>Karma</h4>
-  <p>Spectacular Test Runner for JavaScript.</p>
-</div>
+            </div>
+            <md-button ng-click="" class="md-fab md-mini md-primary"  aria-label="createTodo">
+              <md-icon  md-font-icon="fa-pencil" class="fa fa-lg"  style="color:white;height: auto;" ></md-icon>
+            </md-button>
+          </div>
+          <span class="md-caption"><strong>Or sign up and share your lists with your friends</strong></span>
+
+          <md-content class="transparent">
+            <md-button class="md-raised md-primary"  data-toggle="collapse" data-target="#login">LOGIN</md-button>
+            <md-button class="md-raised md-primary"  data-toggle="collapse" data-target="#register">REGISTER</md-button>
+          </md-content>
+      </md-content> -->
+
+
+    </md-content>
+
+
+  <md-content   layout="row" layout-align="center center" flex class="transparent collapse">
+
+    <!-- <div id="login" ng-init="loginForm.show=false" ng-show="loginForm.show" ng-model="loginForm.name" class="collapse in"> -->
+    <!-- <div id="login" class="collapse in">
+
+      <md-content loginform class="transparent"></md-content >
+
+    </div> -->
+
+
+
+    <div id="login" class="collapse in">
+
+      <md-content registerform class="transparent"></md-content >
+
+    </div>
+  </md-content>
+  <!-- </md-content> -->
+</md-content>

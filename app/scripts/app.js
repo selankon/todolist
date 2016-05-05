@@ -20,8 +20,13 @@ angular
     'ngTouch',
 
 
-    'ui.router'
+    'ui.router',
+    'LocalStorageModule',
+    'ngMaterial'
+
   ])
+
+
   .config(function ( $stateProvider, $urlRouterProvider) {
     $stateProvider
       .state('/', {

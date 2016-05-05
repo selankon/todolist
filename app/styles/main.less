@@ -1,0 +1,60 @@
+// *******
+// COLORS
+// ******
+
+@jumbo-grey: rgba(239, 240, 241, 0.7);
+@background-url: 'http://hdwallpaperbackgrounds.net/wp-content/uploads/2015/10/Blue-Forget-me-not-Flowers-1080p-Wallpaper.jpg';
+
+
+// *******
+// RADIUS
+// ******
+
+// @radius : 10px 10px 10px 10px;
+@radius-m : 20px 20px 20px 20px;
+@radius-h : 40px;
+.border-radius (@radius: 10px){
+  border-radius: @radius;
+  -moz-border-radius: @radius;
+  -webkit-border-radius: @radius;
+  /*border: 1px solid #000000;*/
+}
+.border-rad-m {
+  .border-radius (@radius-m);
+}
+.border-rad-h {
+  .border-radius (@radius-h);
+}
+.border-rad {
+  .border-radius ();
+}
+
+
+// *******
+// COMPONENTS
+// ******
+
+.own-jumbotron {
+  .border-rad;
+  // background-color: @jumbo-grey;
+  background-color:@jumbo-grey;
+  // opacity: .7;
+  padding: 20px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.ng-scope { height: 100%; }
+
+
+.bg-img {
+  background-image: url( "@{background-url}" );
+  background-attachment: fixed;
+    background-position: center;
+  // background-image: url( 'http://hdwallpaperbackgrounds.net/wp-content/uploads/2015/10/Blue-Forget-me-not-Flowers-1080p-Wallpaper.jpg' );
+  // background-color: red !important;
+}
+
+.transparent{
+  background-color: transparent !important;
+}

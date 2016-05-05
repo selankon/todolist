@@ -9,19 +9,24 @@
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="bower_components/angular-material/angular-material.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet/less" href="styles/main.less">
+    <!-- <link rel="stylesheet" href="styles/animations.css"> -->
+    <link rel="stylesheet/less" href="styles/animations.less">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css">
     <!-- endbuild -->
   </head>
-  <body ng-app="todoApp">
+  <body ng-app="todoApp" class="transparent">
     <!--[if lte IE 8]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <div class="header">
+    <!-- <div class="header">
       <div class="navbar navbar-default" role="navigation">
         <div class="container">
           <div class="navbar-header">
@@ -46,11 +51,11 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
 
-    <div class="container">
-      <ui-view ></ui-view>
-    </div>
+    <md-content  class="ng-scope" >
+      <ui-view class="a"></ui-view>
+    </md-content>
 
     <!-- <div class="footer">
       <div class="container">
@@ -73,6 +78,9 @@
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/angular-touch/angular-touch.js"></script>
     <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/angular-local-storage/dist/angular-local-storage.js"></script>
+    <script src="bower_components/angular-material/angular-material.js"></script>
+    <script src="bower_components/less/dist/less.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -80,6 +88,7 @@
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/about.js"></script>
+        <script src="scripts/directives/forms.js"></script>
         <!-- endbuild -->
 </body>
 </html>

@@ -1,0 +1,25 @@
+<div>
+  <md-input-container class="md-icon-float  md-block" flex-gt-sm>
+            <label>Email</label>
+            <md-icon md-font-icon="fa-envelope" class="fa fa-lg"></md-icon>
+            <input name="email" ng-model="res"
+                   required minlength="10" maxlength="100" ng-pattern="/^.+@.+\..+$/" />
+            <!-- <div class="hint" ng-show="showHints">How can we reach you?</div> -->
+            <div ng-messages="form.email.$error" ng-messages-multiple>
+              <div ng-message="pattern" >
+                This is not like an email!
+              </div>
+              <div ng-message-exp="['required', 'minlength', 'maxlength']" ng-messages-multiple>
+                Your email must be between 10 and 100 characters
+              </div>
+              
+
+              <!-- <div ng-message-exp="['required', 'minlength', 'maxlength', 'pattern']">
+                Your email must be between 10 and 100 characters long and look like an e-mail address.
+              </div> -->
+
+            </div>
+          </md-input-container>
+
+
+</div>
