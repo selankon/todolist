@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css">
     <!-- endbuild -->
   </head>
-  <body ng-app="todoApp" class="transparent">
+  <body ng-app="todoApp" class="transparent bg-img">
     <!--[if lte IE 8]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -53,8 +53,8 @@
       </div>
     </div> -->
 
-    <md-content  class="ng-scope" >
-      <ui-view class="a"></ui-view>
+    <md-content  class="ng-scope bg-img" >
+      <ui-view class="a bg-img" ></ui-view>
     </md-content>
 
     <!-- <div class="footer">
@@ -87,8 +87,11 @@
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/main.js"></script>
-        <script src="scripts/controllers/about.js"></script>
         <script src="scripts/directives/forms.js"></script>
+        <script src="scripts/directives/utils.js"></script>
+        <script src="scripts/controllers/profile.js"></script>
+        <script src="scripts/directives/profileview.js"></script>
+        <script src="scripts/services/authservice.js"></script>
         <!-- endbuild -->
 </body>
 </html>

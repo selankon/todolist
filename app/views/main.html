@@ -1,9 +1,9 @@
-<md-content class="bg-img" flex>
+<md-content class="transparent bg-img" flex>
   <!-- <md-content  layout="column" > -->
     <md-content  layout="row" layout-align="center center" class="transparent">
       <!-- <md-content flex="33"> -->
 
-        <!-- <md-content layout="column" layout-align="center center" flex="100" flex-gt-sm="50" class="own-jumbotron">
+        <md-content layout="column" layout-align="center center" flex="100" flex-gt-sm="50" class="own-jumbotron">
           <h1 class="md-display-2">What I'm forgetting to do?</h1>
           <i class="fa fa-question fa-5x spin "></i>
           <p class="lead">
@@ -32,7 +32,7 @@
             <md-button class="md-raised md-primary"  data-toggle="collapse" data-target="#login">LOGIN</md-button>
             <md-button class="md-raised md-primary"  data-toggle="collapse" data-target="#register">REGISTER</md-button>
           </md-content>
-      </md-content> -->
+      </md-content>
 
 
     </md-content>
@@ -41,17 +41,17 @@
   <md-content   layout="row" layout-align="center center" flex class="transparent collapse">
 
     <!-- <div id="login" ng-init="loginForm.show=false" ng-show="loginForm.show" ng-model="loginForm.name" class="collapse in"> -->
-    <!-- <div id="login" class="collapse in">
+    <div id="login" class="collapse ">
 
-      <md-content loginform class="transparent"></md-content >
+      <md-content loginform callback="login"  class="transparent"></md-content >
 
-    </div> -->
+    </div>
 
 
 
-    <div id="login" class="collapse in">
+    <div id="register" class="collapse">
 
-      <md-content registerform class="transparent"></md-content >
+      <md-content registerform callback="register" class="transparent"></md-content >
 
     </div>
   </md-content>

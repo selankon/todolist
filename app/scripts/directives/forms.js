@@ -7,6 +7,21 @@
  * # forms
  */
 angular.module('todoApp')
+  .directive('modificabletext', function () {
+    return {
+      templateUrl: 'scripts/directives/templates/inputs/modificabletext.html',
+      restrict: 'A',
+      scope: {
+        val : '=',
+        type : '='
+      },
+      link: function (scope, element, attrs) {
+        // element.text('this is the forms directive');
+        // scope.formin= "sgdbdsfb";
+      }
+
+    };
+  })
   .directive('userinput', function () {
     return {
       templateUrl: 'scripts/directives/templates/inputs/user-input.html',
@@ -43,6 +58,16 @@ angular.module('todoApp')
       }
     };
   })
+  .directive('imginput', function () {
+    return {
+      templateUrl: 'scripts/directives/templates/inputs/img-input.html',
+      restrict: 'A',
+      scope: {
+        form : '=',
+        res : '='
+      }
+    };
+  })
   .directive('loginform', function () {
     return {
       // template: '<div>ragiuhilsdfblbdsflhbcdsfxcsdzc</div>',
@@ -52,6 +77,9 @@ angular.module('todoApp')
       //
       //     //  var name = scope.tableconfig.name;
       // }
+      scope: {
+        callback : '='
+      }
     };
   })
   .directive('registerform', function () {
@@ -59,9 +87,13 @@ angular.module('todoApp')
       // template: '<div>ragiuhilsdfblbdsflhbcdsfxcsdzc</div>',
       templateUrl: 'scripts/directives/templates/registerform.html',
       restrict: 'A',
+      scope: {
+        callback : '='
+      }
       // link: function (scope, element, attrs) {
       //
       //     //  var name = scope.tableconfig.name;
       // }
     };
-  });
+  })
+  

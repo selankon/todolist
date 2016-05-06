@@ -3,7 +3,32 @@
 // ******
 
 @jumbo-grey: rgba(239, 240, 241, 0.7);
-@background-url: 'http://hdwallpaperbackgrounds.net/wp-content/uploads/2015/10/Blue-Forget-me-not-Flowers-1080p-Wallpaper.jpg';
+@dark-blue: #38659E;
+@background-url: '../images/bg.jpg';
+// @background-url: 'http://hdwallpaperbackgrounds.net/wp-content/uploads/2015/10/Blue-Forget-me-not-Flowers-1080p-Wallpaper.jpg';
+
+// *******
+// UTILS
+// ******
+@px-sm : 5px;
+@px-md : 10px;
+.util-margin (@margin){
+  margin : @margin;
+}
+.util-padding (@margin){
+  padding : @margin;
+}
+.scale(@newSize){
+    width:@newSize; /* you can use % */
+    height: auto;
+}
+.resize (@width: 150px , @height: 150px) {
+  width: @width;
+  height: @height;
+}
+.margin-sm {
+  .util-margin (@px-sm)
+}
 
 
 // *******
@@ -25,22 +50,46 @@
 .border-rad-h {
   .border-radius (@radius-h);
 }
-.border-rad {
+.border-rad  {
   .border-radius ();
 }
+
+// *******
+// Border color
+// ******
+.border-color (@color : red) {
+  border: 1px solid @color;
+}
+.border-red {
+  .border-color();
+}
+
+// *******
+// Frames
+// ******
+.frame-blue {
+  .util-margin(@px-sm);
+  .util-padding(@px-sm);
+  .border-rad;
+  .border-color (@dark-blue);
+}
+
 
 
 // *******
 // COMPONENTS
 // ******
-
 .own-jumbotron {
   .border-rad;
   // background-color: @jumbo-grey;
   background-color:@jumbo-grey;
   // opacity: .7;
   padding: 20px;
+  .util-margin(@px-sm);
+
   margin-top: 20px;
+
+
   text-align: center;
 }
 
@@ -50,11 +99,98 @@
 .bg-img {
   background-image: url( "@{background-url}" );
   background-attachment: fixed;
-    background-position: center;
+  background-position: center;
   // background-image: url( 'http://hdwallpaperbackgrounds.net/wp-content/uploads/2015/10/Blue-Forget-me-not-Flowers-1080p-Wallpaper.jpg' );
   // background-color: red !important;
 }
 
 .transparent{
   background-color: transparent !important;
+}
+
+
+
+
+// *******
+// AVATAR and containers
+// ******
+@width-m : 150px; @height-m :150px;
+@width-sm : 75px; @height-sm :75px;
+@width-xsm : 50px; @height-xsm :50px;
+
+
+
+.avatar-img-m {
+  // .resize (@width-m , @height-m);
+  .scale (@width-m);
+}
+.avatar-img-sm {
+  // .resize (@width-sm , @height-sm);
+  .scale (@width-sm);
+}
+.avatar-img-xsm {
+  // .resize (@width-xsm , @height-xsm);
+  .scale (@width-xsm );
+}
+.avatar-img-round-sm {
+  .border-radius (@radius: 50%);
+  .scale(@newSize:75px);
+  // .avatar-img-round-xsm;
+}
+
+
+.avatar-cont {
+  .util-margin(@px-sm);
+  .border-rad;
+  // .border-color (@dark-blue);
+  img {
+    .border-rad;
+  }
+}
+.avatar-cont-m {
+  .avatar-cont ;
+  width : @width-m;
+  height : @height-m;
+  img {
+    .avatar-img-m
+  }
+}
+.avatar-cont-sm {
+  .avatar-cont ;
+  width : @width-sm;
+  height : @height-sm;
+  img {
+    .avatar-img-sm;
+  }
+}
+
+.avatar-img-round-xsm {
+  // .border-radius (@radius: 50%);
+  .avatar-img-xsm;
+}
+.avatar-cont-round {
+  .border-radius (@radius: 50%);
+  overflow: hidden;
+  display: inline-block;
+}
+
+.avatar-cont-round-xsm {
+  .avatar-cont-round;
+  .resize(@width-sm , @height-sm );
+  img {
+    .scale(@width-sm);
+    // position: absolute;
+    // top: 50%;
+    // left: 50%;
+    // margin-right: -50%;
+    // transform: translate(-50%, -50%)
+  }
+}
+.avatar-cont-round-m {
+  .resize(@width-m , @height-m );
+  .avatar-cont-round;
+  img {
+    .scale(@width-m);
+
+  }
 }

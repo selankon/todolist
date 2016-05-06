@@ -1,0 +1,73 @@
+<div class=" own-jumbotron" layout="column" layout-align="start start" flex >
+  <div class="row" flex="100">
+    <!-- <div> -->
+      <div class="md-display-1"> Welcome <i>{{user.username}}!</i></div>
+      <!-- <div > Welcome <i>{{user.username}}!</i></div> -->
+      <div class="avatar-cont-m" style="display:inline-block">
+        <img src="{{user.img}}" />
+      </div>
+    <!-- </div> -->
+  </div>
+
+  <div class="md-body-2">Your profile things: </div>
+
+  <form name="editForm" ng-model="registerForm">
+    <div class="md-whiteframe-3dp" layout="column" layout-padding layout-margin layout-align="start start" >
+      <div layout="row" layout-align="center center" layout-padding >
+          <span ng-init="edit.username=false" style="display: inline-block;">
+              <span ng-hide="edit.username" >
+                <i class="fa fa-user fa-lg" aria-hidden="true"></i>
+                {{temp.username}}
+              </span>
+              <span ng-show="edit.username"  userinput form="editForm" res="temp.username"> </span>
+          </span>
+          <i class="fa fa-lg" ng-class="edit.username ?  'fa-check' : 'fa-pencil' "  ng-click="edit.username=!edit.username"></i>
+      </div>
+      <div layout="row" layout-align="center center" layout-padding >
+          <span ng-init="edit.password=false" style="display: inline-block;">
+              <span ng-hide="edit.password">
+                <i class="fa fa-lock fa-lg" aria-hidden="true"></i>
+                **********
+                <!-- {{temp.password}} -->
+              </span>
+              <span ng-show="edit.password" passwordinput form="editForm" res="temp.password"> </span>
+
+          </span>
+          <i class="fa fa-lg" ng-class="edit.password ?  'fa-check' : 'fa-pencil' "  ng-click="edit.password=!edit.password"></i>
+
+      </div>
+      <div layout="row" layout-align="center center" layout-padding >
+          <span ng-init="edit.mail=false" style="display: inline-block;">
+              <span ng-hide="edit.mail">
+                <i class="fa fa-envelope-o fa-lg" aria-hidden="true"></i>
+                {{temp.mail}}
+              </span>
+              <span ng-show="edit.mail"  mailinput form="editForm" res="temp.mail"> </span>
+
+          </span>
+          <i class="fa fa-lg" ng-class="edit.mail ?  'fa-check' : 'fa-pencil' "  ng-click="edit.mail=!edit.mail"></i>
+
+      </div>
+      <div layout="row" layout-align="end center" layout-padding >
+          <div layout="row" layout-align="center center" ng-init="edit.img=false" >
+              <div layout="row" layout-align="center center" ng-hide="edit.img" >
+                <i class="fa fa-picture-o fa-lg  " style="margin-right:5px;" aria-hidden="true"></i>
+                <!-- <img class="img-round" src="{{temp.img}}"> -->
+
+                <div class="avatar-cont-round-xsm">
+                  <img src="{{temp.img}}" />
+                </div>
+
+              </div>
+              <span ng-show="edit.img"  imginput form="editForm" res="temp.img"> </span>
+
+          </div>
+          <i class="fa fa-lg" ng-class="edit.img ?  'fa-check' : 'fa-pencil' "  ng-click="edit.img=!edit.img"></i>
+
+      </div>
+    </div>
+  </form>
+
+
+</h1>
+</div>

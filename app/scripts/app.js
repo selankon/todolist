@@ -26,6 +26,10 @@ angular
 
   ])
 
+  .constant ( "config", {
+    'API' : "http://localhost:3000/api/",
+    'LOGIN' : "auth",
+  })
 
   .config(function ( $stateProvider, $urlRouterProvider) {
     $stateProvider
@@ -35,11 +39,14 @@ angular
         controller: 'MainCtrl',
         controllerAs: 'main'
       })
-      .state('about', {
-        url: '/about',
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl',
-        controllerAs: 'about'
+      .state('profile', {
+        url: '/profile',
+        templateUrl: 'views/profile.html',
+        controller: 'ProfileCtrl',
+        controllerAs: 'profile'
       })
       $urlRouterProvider.otherwise('/');
+  })
+  .run (function($rootScope) {
+    $rootScope.api = "http://localhost:3000/api/";
   });
