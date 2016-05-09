@@ -29,8 +29,13 @@
           <span class="md-caption"><strong>Or sign up and share your lists with your friends</strong></span>
 
           <md-content class="transparent">
-            <md-button class="md-raised md-primary"  data-toggle="collapse" data-target="#login">LOGIN</md-button>
-            <md-button class="md-raised md-primary"  data-toggle="collapse" data-target="#register">REGISTER</md-button>
+            <md-button class="md-raised md-primary"  data-toggle="collapse" data-target="#login" ng-hide="localSession.userData.username" >LOGIN</md-button>
+            <md-button class="md-raised md-primary"  data-toggle="collapse" data-target="#register" ng-hide="localSession.userData.username">REGISTER</md-button>
+
+            <md-button class="md-raised md-primary" ng-show="localSession.userData.username"  ui-sref="profile" >PROFILE</md-button>
+            <!-- <md-button class="md-raised md-primary"  ng-show="localSession.userData.username" logout ng-click="logout()" >LOGOUT</md-button> -->
+            <logoutbtn ng-show="localSession.userData.username"> </logoutbtn>
+
           </md-content>
       </md-content>
 
@@ -40,20 +45,16 @@
 
   <md-content   layout="row" layout-align="center center" flex class="transparent collapse">
 
-    <!-- <div id="login" ng-init="loginForm.show=false" ng-show="loginForm.show" ng-model="loginForm.name" class="collapse in"> -->
-    <div id="login" class="collapse ">
-
+    <div id="login" class="collapse" ng-hide="localSession.userData.username">
       <md-content loginform callback="login"  class="transparent"></md-content >
-
     </div>
+    <!-- {{localSession.data}} -->
+    <!-- {{localSession.tokenData}} -->
 
-
-
-    <div id="register" class="collapse">
-
+    <div id="register" class="collapse" ng-hide="localSession.userData.username">
       <md-content registerform callback="register" class="transparent"></md-content >
-
     </div>
+
   </md-content>
   <!-- </md-content> -->
 </md-content>

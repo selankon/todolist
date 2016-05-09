@@ -8,16 +8,21 @@
  * Controller of the todoApp
  */
 angular.module('todoApp')
-  .controller('MainCtrl', [ '$scope', 'config',
-  function ($scope,config) {
+  .controller('MainCtrl', [ '$scope', '$rootScope', 'authService', 'localSession',
+  function ($scope, $rootScope ,authService, localSession) {
 
-    console.log("Loading constants " , config.API);
+
+
+    $scope.localSession = localSession;
+
+    // console.log("ROOT SCOPE" , $rootScope.localSession.userData.username);
+
 
     $scope.register = function (data){
-      console.log("Register CALLBACK! " , data);
-
+      authService.register (data);
     }
     $scope.login = function (data){
-      console.log("Login CALLBACK! " , data);
+      authService.login (data);
     }
+
   }]);

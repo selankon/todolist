@@ -25,6 +25,14 @@ module.exports = function (grunt) {
     dist: 'dist'
   };
 
+  //Enable CORS
+  var corsMiddleware = function(req, res, next) {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+    next();
+  }
+
   // Define the configuration for all the tasks
   grunt.initConfig({
 
@@ -57,7 +65,16 @@ module.exports = function (grunt) {
       },
       livereload: {
         options: {
-          livereload: '<%= connect.options.livereload %>'
+          livereload: '<%= connect.options.livereload %>',
+          middleware: function (connect) {
+            return [
+              function(req, res, next) {
+                res.setHeader('Access-Control-Allow-Origin', '*');
+                res.setHeader('Access-Control-Allow-Methods', '*');
+                next();
+              },
+            ];
+          }
         },
         files: [
           '<%= yeoman.app %>/{,*/}*.html',
@@ -220,7 +237,7 @@ module.exports = function (grunt) {
             }
           }
       }
-    }, 
+    },
 
     // Renames files for browser caching purposes
     filerev: {

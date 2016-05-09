@@ -5,14 +5,14 @@ Login</h1>
 
   <div layout="column" ng-cloak class="md-inline-form">
 
-    <form name="loginForm" ng-model="loginForm">
+    <form name="loginForm" ng-model="loginForm" >
 <!-- name : {{form.name}}   {{loginForm.$valid}} -->
       <div userinput form="loginForm" res="loginData.username"> </div>
       <div passwordinput form="loginForm" res="loginData.password"> </div>
       <!-- {{loginForm.name.$valid}} -->
       <!-- {{form.name}} -->
 
-      <md-button  ng-disabled="loginForm.$invalid"  class="md-raised md-primary" ng-click="callback(loginData)">Login!</md-button>
+      <md-button  ng-disabled="loginForm.$invalid"  class="md-raised md-primary" ng-click="callback(loginData)" type="submit">Login!</md-button>
       <!-- <md-button  ng-disabled="loginForm.$invalid" ui-sref=""  class="md-raised md-primary">Create!</md-button> -->
 
 
