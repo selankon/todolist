@@ -32,7 +32,7 @@
 
 
 // *******
-// RADIUS
+// BORDER RADIUS
 // ******
 
 // @radius : 10px 10px 10px 10px;
@@ -63,6 +63,10 @@
 .border-red {
   .border-color();
 }
+.border-blue {
+  .border-color(@color: blue);
+}
+
 
 // *******
 // Frames
@@ -108,6 +112,15 @@
   background-color: transparent !important;
 }
 
+.dropdown-menu-login {
+    width: 300px !important;
+    height: 400px !important;
+}
+.dropdown-menu-register {
+    width: 400px !important;
+    height: 400px !important;
+}
+
 
 
 
@@ -117,6 +130,7 @@
 @width-m : 150px; @height-m :150px;
 @width-sm : 75px; @height-sm :75px;
 @width-xsm : 50px; @height-xsm :50px;
+@width-xxsm : 25px; @height-xxsm :25px;
 
 
 
@@ -131,6 +145,10 @@
 .avatar-img-xsm {
   // .resize (@width-xsm , @height-xsm);
   .scale (@width-xsm );
+}
+.avatar-img-xxsm {
+  // .resize (@width-xsm , @height-xsm);
+  .scale (@width-xxsm );
 }
 .avatar-img-round-sm {
   .border-radius (@radius: 50%);
@@ -184,6 +202,18 @@
     // left: 50%;
     // margin-right: -50%;
     // transform: translate(-50%, -50%)
+  }
+}
+.avatar-cont-round-xxsm {
+  .avatar-cont-round;
+  .resize(@width-xsm , @height-xsm );
+  img {
+    .scale(@width-xxsm);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
   }
 }
 .avatar-cont-round-m {

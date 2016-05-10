@@ -10,8 +10,10 @@
             ¡Never more forget!
           </p>
           <span class="md-caption"><strong>Create a públic todo list and share the link</strong></span>
+          <div createtodo></div>
+          
 
-          <div  layout='row'>
+          <!-- <div  layout='row'>
             <div>
                 <md-input-container class="md-icon-float md-block" flex-gt-sm>
                   <label>List name</label>
@@ -25,15 +27,22 @@
             <md-button ng-click="" class="md-fab md-mini md-primary"  aria-label="createTodo">
               <md-icon  md-font-icon="fa-pencil" class="fa fa-lg"  style="color:white;height: auto;" ></md-icon>
             </md-button>
-          </div>
+          </div> -->
           <span class="md-caption"><strong>Or sign up and share your lists with your friends</strong></span>
 
           <md-content class="transparent">
-            <md-button class="md-raised md-primary"  data-toggle="collapse" data-target="#login" ng-hide="localSession.userData.username" >LOGIN</md-button>
-            <md-button class="md-raised md-primary"  data-toggle="collapse" data-target="#register" ng-hide="localSession.userData.username">REGISTER</md-button>
+            <md-button class="md-raised md-primary"  data-toggle="collapse" data-target="#login" ng-hide="localSession.userData.username" >
+              <i class="fa fa-sign-in fa-lg" aria-hidden="true"></i>
+                LOGIN
+             </md-button>
+            <md-button class="md-raised md-primary"  data-toggle="collapse" data-target="#register" ng-hide="localSession.userData.username">
+              <i class="fa fa-plug fa-lg" aria-hidden="true"></i>
+              REGISTER
+            </md-button>
 
-            <md-button class="md-raised md-primary" ng-show="localSession.userData.username"  ui-sref="profile" >PROFILE</md-button>
+            <!-- <md-button class="md-raised md-primary" ng-show="localSession.userData.username"  ui-sref="profile" >PROFILE</md-button> -->
             <!-- <md-button class="md-raised md-primary"  ng-show="localSession.userData.username" logout ng-click="logout()" >LOGOUT</md-button> -->
+            <profilebtn ng-show="localSession.userData.username"> </profilebtn>
             <logoutbtn ng-show="localSession.userData.username"> </logoutbtn>
 
           </md-content>
@@ -46,13 +55,13 @@
   <md-content   layout="row" layout-align="center center" flex class="transparent collapse">
 
     <div id="login" class="collapse" ng-hide="localSession.userData.username">
-      <md-content loginform callback="login"  class="transparent"></md-content >
+      <md-content loginform  class="transparent"></md-content >
     </div>
     <!-- {{localSession.data}} -->
     <!-- {{localSession.tokenData}} -->
 
     <div id="register" class="collapse" ng-hide="localSession.userData.username">
-      <md-content registerform callback="register" class="transparent"></md-content >
+      <md-content registerform  class="transparent"></md-content >
     </div>
 
   </md-content>

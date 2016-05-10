@@ -10,9 +10,9 @@ angular.module('todoApp')
   .directive('dialogs', function ($mdDialog) {
     return {
       // template: '<div></div>',
-      restrict: 'E',
+      restrict: 'AEC',
       link: function postLink($scope, element, attrs) {
-        $scope.showAlert = function(ev) {
+        $scope.showAlert = function(title, content, ok ) {
            // Appending dialog to document.body to cover sidenav in docs app
            // Modal dialogs should fully cover application
            // to prevent interaction outside of dialog
@@ -20,11 +20,11 @@ angular.module('todoApp')
              $mdDialog.alert()
                .parent(angular.element(document.querySelector('#popupContainer')))
                .clickOutsideToClose(true)
-               .title('This is an alert title')
-               .textContent('You can specify some description text in here.')
+               .title(title)
+               .textContent(content)
                .ariaLabel('Alert Dialog Demo')
-               .ok('Got it!')
-               .targetEvent(ev)
+               .ok(ok)
+              //  .targetEvent(ev)
            );
          };
       }

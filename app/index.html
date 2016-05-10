@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css">
     <!-- endbuild -->
   </head>
-  <body ng-app="todoApp" class="transparent bg-img">
+  <body ng-app="todoApp"  layout="column" flow-prevent-drop ng-cloak style='overflow-y: hidden' >
     <!--[if lte IE 8]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -53,8 +53,10 @@
       </div>
     </div> -->
 
+    <div header> </div>
+
     <md-content  class="ng-scope bg-img" >
-      <ui-view class="a bg-img" ></ui-view>
+      <ui-view ></ui-view>
     </md-content>
 
     <!-- <div class="footer">
@@ -95,6 +97,14 @@
         <script src="scripts/services/session.js"></script>
         <script src="scripts/directives/profilebuttons.js"></script>
         <script src="scripts/directives/dialogs.js"></script>
+        <script src="scripts/directives/header.js"></script>
+        <!-- <script src="scripts/directives/todoslists.js"></script> -->
+        <script src="scripts/services/listsservice.js"></script>
+        <script src="scripts/services/todolists.js"></script>
+        <script src="scripts/directives/tododirective.js"></script>
         <!-- endbuild -->
+
+        <script src="scripts/directives/controllers/todoslistsCntrl.js"></script>
+
 </body>
 </html>

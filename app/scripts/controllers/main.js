@@ -18,11 +18,13 @@ angular.module('todoApp')
     // console.log("ROOT SCOPE" , $rootScope.localSession.userData.username);
 
 
-    $scope.register = function (data){
-      authService.register (data);
-    }
-    $scope.login = function (data){
-      authService.login (data);
-    }
+    // $scope.register = function (data){
+    //   authService.register (data);
+    //   // data = {};
+    // }
+    // $scope.login = function (data){
+    //   authService.login (data);
+    //   // data = {};
+    // }
 
   }]);

@@ -1,7 +1,35 @@
-<md-content class="transparent" layout="row">
+<md-content class="transparent" layout="row" flex>
   <div profileview user="user" temp="temp" flex="nogrow"> </div>
-  <!-- <div profileview user="user" temp="temp" flex="50"> </div> -->
-  <logoutbtn > </logoutbtn>
+  <!-- <div todoslists  flex> </div> -->
+
+  <div class="own-jumbotron border-blue"  layout="column" flex>
+
+    <div layout="row"  layout-align="space-between start" flex >
+
+      <div  layout="row" class="border-red"  flex="100">
+        <div layout="row" flex>
+          Filter here (or auto complete)
+        </div>
+        <div layout="row" flex>
+          <div createtodo flex></div>
+        </div>
+      </div>
+
+    </div>
+
+    <div ng-click="get()">GETLIST CLICK ME!</div>
+
+    <div ng-repeat="list in cosas.lists">
+      <div todoviewdirective  flex="100" data="list" ></div>
+    </div>
+
+    <!-- {{cosas.lists}} -->
+    <!-- wwawawawwaawawwaawwiwa
+    {{cosas.map}} -->
+  </div>
+
+
+
 
 
 

@@ -11,13 +11,18 @@ angular.module('todoApp')
   .service('authService', ['authRemote', 'localSession',
   function(authRemote, localSession){
 
-    this.login = function (login, cb, error){
+    this.login = function (login, cb, err){
       authRemote.login().login(login).$promise
         .then (
           function (data) {
             console.log("LOGIN authService DATA RECEIVED" , data);
             if (data.success){
               localSession.createSession (data.token);
+              cb(data);
+              
+            } else {
+              err (data.message);
+
             }
          }, function(error) {
             //you can add anything else you want inside this function
@@ -27,16 +32,21 @@ angular.module('todoApp')
       localSession.destroySession ();
     }
 
-    this.register = function (register, cb, error){
+    this.register = function (register, cb, err){
       console.log("Register FROM " , register);
       authRemote.register().register(register).$promise
         .then (
           function (data) {
             console.log("REGISTER authService DATA RECEIVED" , data);
             if (data.success){
+              cb(data);
+              // console.log("data success");
               // localSession.createSession (data.token);
-            } else {
 
+            } else {
+              // console.log("data NO success");
+
+              err (data.message);
             }
          }, function(error) {
             //you can add anything else you want inside this function

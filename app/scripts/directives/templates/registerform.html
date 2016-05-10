@@ -10,7 +10,7 @@ Register</h1>
       <div passwordinput form="registerForm" res="regsiterData.password"> </div>
       <div mailinput form="registerForm" res="regsiterData.mail"> </div>
       <div imginput form="registerForm" res="regsiterData.img"> </div>
-      <md-button type="submit" ng-disabled="registerForm.$invalid"  class="md-raised md-primary" ng-click="callback(regsiterData)">Login!</md-button>
+      <md-button type="submit" ng-disabled="registerForm.$invalid"  class="md-raised md-primary" dialogs ng-click="register(regsiterData); regsiterData = {};">Login!</md-button>
 
 
     </form>

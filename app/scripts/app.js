@@ -29,11 +29,37 @@ angular
     'API' : "http://localhost:3000/api/",
     'LOGIN' : "auth",
     'REGISTER' : "user",
+    'GETLISTS' : "lists",
   })
   // Enabling CORS
   .config(['$httpProvider', function($httpProvider) {
-      $httpProvider.defaults.useXDomain = true;
-      delete $httpProvider.defaults.headers.common['X-Requested-With'];
+
+      $httpProvider.interceptors.push(['$q', '$location', '$localStorage', function ($q, $location, $localStorage) {
+        return {
+          'request': function (config) {
+             config.headers = config.headers || {};
+             if ($localStorage.token) {
+                //  config.headers.Authorization = $localStorage.token;
+                 config.headers = {'X-access-token' : $localStorage.token};
+
+                //  console.log("Adding token to http request ", config.headers );
+             }
+             return config;
+          },
+          'responseError': function (response) {
+             if (response.status === 401 || response.status === 403) {
+                 $location.path('/');
+             }
+             return $q.reject(response);
+          }
+        };
+      }]);
+
+
+    $httpProvider.defaults.useXDomain = true;
+    // $httpProvider.defaults.withCredentials = true;   // <-- This not, is for only allow one url to acces the api
+    delete $httpProvider.defaults.headers.common['X-Requested-With'];
+
     }
   ])
   // Set state routes
@@ -83,7 +109,26 @@ angular
 
     $rootScope.localSession = localSession;
 
-  })
+  });
+
+//   $httpProvider.interceptors.push(['$q', '$location', '$localStorage', function ($q, $location, $localStorage) {
+//    return {
+//        'request': function (config) {
+//            config.headers = config.headers || {};
+//            if ($localStorage.token) {
+//                config.headers.Authorization = 'Bearer ' + $localStorage.token;
+//            }
+//            return config;
+//        },
+//        'responseError': function (response) {
+//            if (response.status === 401 || response.status === 403) {
+//                $location.path('/signin');
+//            }
+//            return $q.reject(response);
+//        }
+//    };
+// }]);
+
 
     // .use(allowCrossDomain);
 

@@ -12,7 +12,7 @@ Login</h1>
       <!-- {{loginForm.name.$valid}} -->
       <!-- {{form.name}} -->
 
-      <md-button  ng-disabled="loginForm.$invalid"  class="md-raised md-primary" ng-click="callback(loginData)" type="submit">Login!</md-button>
+      <md-button  ng-disabled="loginForm.$invalid"  class="md-raised md-primary" dialogs ng-click="login(loginData); loginData = {};" type="submit">Login!</md-button>
       <!-- <md-button  ng-disabled="loginForm.$invalid" ui-sref=""  class="md-raised md-primary">Create!</md-button> -->
 
 
